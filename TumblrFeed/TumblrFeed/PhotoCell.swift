@@ -10,8 +10,12 @@ import UIKit
 
 class PhotoCell: UITableViewCell {
 
-    override func awakeFromNib() {
+    @IBOutlet var imgView: UIImageView!
+    
+    override func awakeFromNib()
+    {
         super.awakeFromNib()
+        imgView.contentMode = .scaleAspectFit
         // Initialization code
     }
 
