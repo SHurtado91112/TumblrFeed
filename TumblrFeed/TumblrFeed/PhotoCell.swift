@@ -12,10 +12,18 @@ class PhotoCell: UITableViewCell {
 
     @IBOutlet var imgView: UIImageView!
     
+    @IBOutlet weak var avatar: UIImageView!
+    @IBOutlet weak var userLabel: UILabel!
+    
+    @IBOutlet weak var caption: UILabel!
+    
+    
     override func awakeFromNib()
     {
         super.awakeFromNib()
         imgView.contentMode = .scaleAspectFit
+        self.avatar.layer.cornerRadius = self.avatar.frame.size.width / 2
+        self.avatar.clipsToBounds = true
         // Initialization code
     }
 

@@ -8,15 +8,32 @@
 
 import UIKit
 
-class PhotoDetailsViewController: UIViewController {
-
-    override func viewDidLoad() {
+class PhotoDetailsViewController: UIViewController
+{
+    @IBOutlet weak var avatarView: UIImageView!
+    
+    @IBOutlet weak var userLabel: UILabel!
+    @IBOutlet weak var imgView: UIImageView!
+    var photo : UIImage!
+    var labelText = ""
+    var avatarImg : UIImage!
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-
+        
+        imgView.image = photo
+        userLabel.text = labelText
+        
+        avatarView.image = avatarImg
+        
+        
+        self.avatarView.layer.cornerRadius = self.avatarView.frame.size.width / 2
+        self.avatarView.clipsToBounds = true
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+     {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
